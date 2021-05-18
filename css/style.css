@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --very-ddrk-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--light-grayish-blue);
+}
+
+div.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 1fr;
+    height: 80vh;
+    width: 80vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+
+
+div.img {
+    background-image: url('/images/drawers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.column{
+    display: grid;
+    grid-template-rows: 1fr 70px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+div.description {
+    padding: 10vw;
+    color: var(--very-ddrk-grayish-blue);
+}
+
+div.description h3 {
+    font-weight: 700;
+}
+
+div.description p {
+    margin-top: 15px;
+    font-weight: 500;
+    line-height: 1.7em;
+}
+
+div.user {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: 70px;
+    padding: 0 10vw;
+
+}
+
+div.user img.avatar {
+    height: 5.5vh;
+    border-radius: 50%;
+    align-self: center;
+
+}
+
+div.user div.data {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    margin: 0 15px;
+}
+
+div.user div.data h4 {
+    font-size: 1em;
+    align-self: flex-end;
+
+}
+
+div.user div.data h5 {
+    font-size: 1em;
+    color: var(--grayish-blue);
+    align-self: flex-start;
+}
+
+div.user div.share {
+    background-image: url('/images/icon-share.svg');
+    background-repeat: no-repeat;
+    background-color: var(--light-grayish-blue);
+    background-position: center;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    align-self: center;
+
+}
+
+div.invisible {
+    background-color: var(--very-ddrk-grayish-blue);
+    color: white;
+    display: grid;
+    grid-template-columns: min-content min-content min-content min-content 1fr;
+    grid-template-rows: 70px;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    padding: 0 10vw;
+    display: none;
+
+}
+
+div.invisible h4 {
+    text-transform: uppercase;
+    color: var(--grayish-blue);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    font-size: 1.1em;
+    margin-right: 15px;
+
+}
+
+div.invisible img {
+    padding: 6px;
+}
+
+
+div.invisible div.dark-share {
+    background-image: url('/images/icon-share.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 4vh;
+    width: 4vh;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: flex-end;
+
+}
+
+.visible {
+    display: block;
+    z-index: 1;
+}
+
+@media(min-width:1137px) {
+
+    div.wrapper {
+        grid-template-columns: 40% 1fr;
+        grid-template-rows: 1fr;
+        min-height: 0;
+        height: 35vh;
+        width: 60vw;
+        grid-template-areas:
+            "img column";
+        border-radius: 20px;
+        overflow: visible;
+    }
+
+    div.img {
+        grid-area: img;
+        background-size: 100% 35vh, contain;
+        border-radius: 20px 0 0 20px;
+
+    }
+
+    div.column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr min-content;
+        grid-template-areas:
+            "description"
+            "user";
+        grid-area: column;
+    }
+
+
+    div.description {
+        grid-area: description;
+        padding: 40px 40px 0 40px;
+    }
+
+    div.description h3 {
+        font-size: 1.6em;
+    }
+
+    div.user {
+        display: grid;
+        grid-template-columns: min-content 1fr min-content;
+        grid-template-rows: 70px;
+        grid-area: user;
+        padding: 0 40px;
+    }
+
+    div.invisible {
+        grid-template-columns: min-content min-content min-content min-content 1fr;
+        grid-template-rows: 70px;
+        width: min-content;
+        padding: 0 30px;
+        border-radius: 20px;
+        position: absolute;
+        right: -60px;
+        bottom: 80px;
+        box-shadow: 3px 2px 2px var(--desaturated-dark-blue);
+
+    }
+
+    div.invisible::before {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid var(--very-ddrk-grayish-blue);
+        left: calc(50%-20px);
+        bottom: -10px;
+    }
+
+
+    div.invisible div.dark-share {
+        background-image: none;
+        width: 0vh;
+        border-radius: 50%;
+    }
+
+
+
+
+}
