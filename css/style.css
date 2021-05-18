@@ -23,8 +23,8 @@ div.wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 40% 1fr;
-    height: 80vh;
-    width: 80vw;
+    height: 600px;
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,7 +50,7 @@ div.column{
 }
 
 div.description {
-    padding: 10vw;
+    padding: 40px;
     color: var(--very-ddrk-grayish-blue);
 }
 
@@ -68,12 +68,12 @@ div.user {
     display: grid;
     grid-template-columns: min-content 1fr min-content;
     grid-template-rows: 70px;
-    padding: 0 10vw;
+    padding: 0 40px;
 
 }
 
 div.user img.avatar {
-    height: 5.5vh;
+    height: 40px;
     border-radius: 50%;
     align-self: center;
 
@@ -88,13 +88,13 @@ div.user div.data {
 }
 
 div.user div.data h4 {
-    font-size: 1em;
+    font-size: 0.9em;
     align-self: flex-end;
 
 }
 
 div.user div.data h5 {
-    font-size: 1em;
+    font-size: 0.9em;
     color: var(--grayish-blue);
     align-self: flex-start;
 }
@@ -104,8 +104,8 @@ div.user div.share {
     background-repeat: no-repeat;
     background-color: var(--light-grayish-blue);
     background-position: center;
-    height: 4vh;
-    width: 4vh;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     align-self: center;
 
@@ -120,7 +120,7 @@ div.invisible {
     width: 100%;
     align-items: center;
     justify-items: center;
-    padding: 0 10vw;
+    padding: 0 40px;
     display: none;
 
 }
@@ -144,8 +144,8 @@ div.invisible div.dark-share {
     background-image: url('/images/icon-share.svg');
     background-repeat: no-repeat;
     background-position: center;
-    height: 4vh;
-    width: 4vh;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     align-self: center;
     justify-self: flex-end;
@@ -157,14 +157,14 @@ div.invisible div.dark-share {
     z-index: 1;
 }
 
-@media(min-width:1137px) {
+@media(min-width:1136px) {
 
     div.wrapper {
         grid-template-columns: 40% 1fr;
         grid-template-rows: 1fr;
         min-height: 0;
-        height: 35vh;
-        width: 60vw;
+        height: 300px;
+        width: 700px;
         grid-template-areas:
             "img column";
         border-radius: 20px;
@@ -173,7 +173,7 @@ div.invisible div.dark-share {
 
     div.img {
         grid-area: img;
-        background-size: 100% 35vh, contain;
+        background-size: 100% 300px, contain;
         border-radius: 20px 0 0 20px;
 
     }
